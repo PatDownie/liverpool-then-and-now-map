@@ -1,13 +1,14 @@
 var map = L.map("map").setView([53.40578260174832, -2.995853357868761], 13);
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19,
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  maxZoom: 20,
+  attribution:
+    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
 
 const iconSize1 = [26, 49];
 const iconAnchor1 = [13, 49];
-const popupAnchor1 = [-8, -95];
+const popupAnchor1 = [0, -50];
 
 const NIcon = L.icon({
   iconUrl: "./images/icons/N.png",
@@ -96,5 +97,14 @@ for (let i = 0; i <= markerArray.length - 1; i++) {
     riseOnHover: true,
     icon: markerArray[i].icon,
   }).addTo(map);
-  marker.bindPopup(`<b>This is:</b><br>${markerArray[i].name}<br><img class="popupImage" src="${markerArray[i].imgURL}" alt="Image of ${markerArray[i].name}">`, { minWidth: 300 });
+  marker.bindPopup(
+    `${markerArray[i].name}<br><br><img class="popupImage" src="${
+      markerArray[i].imgURL
+    }" alt="Image of ${
+      markerArray[i].name
+    }"><br><a class="fullscreenButton" href="http://127.0.0.1:5500${markerArray[
+      i
+    ].imgURL.slice(1)}">View fullscreen</a>`,
+    { minWidth: 230, autoPan: true }
+  );
 }

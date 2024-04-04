@@ -1,8 +1,45 @@
+body {
+  background-color: rgb(51, 51, 51);
+}
+
+#pageConatainer {
+  height: 100vh;
+}
+
+h1 {
+  background-color: rgb(51, 51, 51);
+
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  margin: 1rem 0;
+
+  font-family: "Roboto Slab", serif;
+  font-weight: 900;
+}
+
 #map {
-  height: 800px;
+  height: 80vh;
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  #map {
+    width: 100%;
+  }
 }
 
 .popupImage {
   /* height: 200px; */
   width: 100%;
 }
+
+/* .fullscreenButton {
+  background-color: #008294;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin: 30px auto;
+} */
